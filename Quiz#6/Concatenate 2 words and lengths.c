@@ -4,16 +4,13 @@
 
 int main()
 {
-    char a[10],b[10],c='_';
-    int an,bn,sum;
+    char a[10],b[10];
 
     scanf("%s %s",&a,&b);
-
-    an = strlen(a);
-    bn = strlen(b);
-    sum = an+bn;
-    printf("%s%c%s",a,c,b);
-    printf("\n%d",sum+1);
+    strcat(a,"_");
+    strcat(a,b);
+    printf("%s",a);
+    printf("\n%d",strlen(a));
 
     exit(EXIT_SUCCESS);
 }
