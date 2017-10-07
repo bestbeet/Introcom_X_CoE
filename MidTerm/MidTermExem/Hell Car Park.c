@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #define r 3
 #define c 10
 int main()
@@ -57,5 +58,5 @@ int main()
     }
     while (loop);
 
-    exit(exit_success);
+    exit(EXIT_SUCCESS);
 }

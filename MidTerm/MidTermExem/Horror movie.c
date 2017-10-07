@@ -46,6 +46,7 @@ int main()
                 else if(movie[row-1][cow-1] == 0)
                 {
                     movie[row-1][cow-1] = 1;
+                    printf("Reserved Success");
                     break;
                 }
             }
