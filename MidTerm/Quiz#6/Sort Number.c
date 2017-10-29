@@ -1,29 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int ascending(const void *l, const void *r);
+
 int main()
 {   
-    int n,i,j,swap;
+    int n, i;
+    int *a;
+
     scanf("%d",&n);
-    int a[n];
+
+    a = (int *) malloc(n * sizeof(int));
+
     for (i = 0; i < n; i++)
         scanf("%d", &a[i]);
         
-    for (i = 0 ; i < ( n - 1 ); i++)
-    {
-        for (j = 0 ; j < n - i - 1; j++)
-        {
-            if (a[j] > a[j+1])
-            {
-                swap = a[j];
-                a[j]= a[j+1];
-                a[j+1] = swap;
-            }
-        }
-    }
+    qsort(a, n, sizeof(int), ascending);
  
-    for ( i = 0 ; i < n ; i++ )
+    for (i = 0 ; i < n ; i++)
         printf("%d ", a[i]);
+
+    free(a);
 
     exit(EXIT_SUCCESS);
 }
+
+int ascending(const void *l, const void *r)
+{
+  return (*((int *) l) - *((int *) r));
+}
+

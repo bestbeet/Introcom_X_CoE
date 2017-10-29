@@ -1,21 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 int main()
 {
     char a;
     int c = 0,l = 0,d = 0;
-    do{
-        
+
+    do
+    {
         scanf(" %c",&a);
         c++;
-        if( (a >= 'A' && a <= 'Z') || ( a >= 'a' && a <= 'z')){
+
+        if(isalpha(a))
             l++;
-        }
-        if( a >= '0' && a <= '9'){
+        
+        if(isdigit(a))
             d++;
-        }
-    }while (a != '#'); 
+    } while (a != '#'); 
+
     printf("Count: %d\n",c);
     printf("Letter: %d\n",l);
     printf("Digit: %d",d);
