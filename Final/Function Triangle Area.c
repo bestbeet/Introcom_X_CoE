@@ -16,13 +16,15 @@ int     isTriangle(int a, int b, int c){
     }
     if (max < sum)
         t=1;
+    else if (a == b && a == c && b == c)
+        t=1;
     else
         t=0;
     return t;
 }
 float  triangleArea(int a, int b, int c){
     float s,area;
-    s = (a+b+c)/2;
+    s = (a+b+c)*0.5;
     area = sqrt(s*(s-a)*(s-b)*(s-c));
     return area;
 }
