@@ -13,8 +13,8 @@ int main()
     	else if(op=='-') res-=a;
     	else if(op=='*') res*=a;
     	else if(op=='/') {
-    	  if(a!=0) res/=a;	
-    	  else { 
+    	  if(a!=0) res/=a;
+    	  else {
 		    res=0;
 		    printf("%s",c);
 		  }
