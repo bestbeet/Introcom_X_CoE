@@ -3,29 +3,30 @@
 
 int main()
 {
- int value[4][3];
- int i,j,max;
- for(i=0;i<4;i++){
-   for(j=0;j<3;j++){
-     scanf("%d",value[i][j]);
-   }
- }
- max = MaxValue(value);
- print(max);
+    int value[12];
+    int i,j,max;
+
+    for (i = 0 ; i < 12 ; i++)
+        scanf("%d", &value[i]);
+
+    max = MaxValue(value);
+    print(max);
+    
     exit(EXIT_SUCCESS);
 }
-int MaxValue (int Matrix[4][3]){
-  int i,j,max;
-  max = Matrix[0][0];
-  for(i=0;i<4;i++){
-    for(j=0;j<3;j++){
-      if(max < Matrix[i][i]){
-        max = Matrix[i][j];
-      }
-    }
-  }
+
+int MaxValue (int value[])
+{
+    int max = value[0];
+    int i;
+    for (i = 1 ; i < 12 ; i++)
+        if (max < value[i])
+            max = value[i];
+
   return max;
 }
-void print(int max){
-  printf("%d",max);
+
+void print(int max)
+{
+    printf("%d",max);
 }
